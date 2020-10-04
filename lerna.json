@@ -10,6 +10,8 @@
     },
     "publish": {
       "allowBranch": "master",
+      "conventionalCommits": true,
+      "yes": true,
       "ignoreChanges": [
         "packages/**/*.test.js",
         "packages/**/*.test.js.snap",
