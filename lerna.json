@@ -12,10 +12,12 @@
       "allowBranch": "master",
       "conventionalCommits": true,
       "yes": true,
+      "message": "chore: publish",
       "ignoreChanges": [
         "packages/**/*.test.js",
         "packages/**/*.test.js.snap",
-        "packages/**/__tests__/**"
+        "packages/**/__tests__/**",
+        "**/stories/**"
       ]
     }
   }
