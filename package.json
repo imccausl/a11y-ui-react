@@ -15,6 +15,16 @@
     "type": "git",
     "url": "git+https://github.com/imccausl/a11y-ui-react.git"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "storybook-deployer": {
     "gitUsername": "Documentation Deployer",
     "gitEmail": "imccausl@gmail.com",
@@ -29,6 +39,8 @@
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@storybook/addon-a11y": "^6.0.25",
     "@storybook/addon-actions": "^6.0.22",
     "@storybook/addon-essentials": "^6.0.22",
@@ -38,6 +50,8 @@
     "@testing-library/react": "^11.0.4",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
+    "cross-env": "^7.0.2",
+    "husky": "^4.3.0",
     "jest": "^26.4.2",
     "jest-styled-components": "^7.0.3",
     "lerna": "^3.22.1",
@@ -51,6 +65,7 @@
     "start": "start-storybook -p 6006",
     "docs:deploy": "yarn docs:build && storybook-to-ghpages --existing-output-dir=.out",
     "docs:build": "build-storybook -o .out -s .storybook/static",
+    "release": "cross-env HUSKY_BYPASS=true lerna publish",
     "test": "jest"
   }
 }
