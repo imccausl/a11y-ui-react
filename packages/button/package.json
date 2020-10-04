@@ -1,0 +1,30 @@
+{
+  "name": "@a11y-react/button",
+  "version": "1.0.0",
+  "description": "An accessible react button component",
+  "author": "Ian McCausland <imccausl@gmail.com>",
+  "homepage": "https://docs.a11y-react.com",
+  "license": "MIT",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imccausl/a11y-ui-react.git"
+  },
+  "scripts": {
+    "build": "concurrently yarn:build:*",
+    "test": "jest --env=jsdom --passWithNoTests",
+    "lint": "concurrently yarn:lint:*",
+    "version": "yarn build",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --root-mode upward --extensions .js,.jsx -d lib/esm --source-maps",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .js,.jsx -d lib/cjs --source-maps",
+    "lint:src": "eslint src --ext .ts,.tsx --config ../../.eslintrc",
+    "lint:types": "tsc --noEmit"
+  }
+}
