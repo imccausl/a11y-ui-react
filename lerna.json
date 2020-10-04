@@ -7,6 +7,14 @@
   "command": {
     "bootstrap": {
       "npmClientArgs": ["--no-package-lock"]
+    },
+    "publish": {
+      "allowBranch": "master",
+      "ignoreChanges": [
+        "packages/**/*.test.js",
+        "packages/**/*.test.js.snap",
+        "packages/**/__tests__/**"
+      ]
     }
   }
 }

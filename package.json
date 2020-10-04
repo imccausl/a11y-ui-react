@@ -6,7 +6,12 @@
   "repository": "git@github.com:imccausl/react-accessible-ui-components.git",
   "author": "Ian McCausland <imccausl@gmail.com>",
   "license": "MIT",
-  "private": false,
+  "private": true,
+  "storybook-deployer": {
+    "gitUsername": "Deploy",
+    "gitEmail": "imccausl@gmail.com",
+    "commitMessage": "chore(Deploy): Deploy docs to GitHub Pages"
+  },
   "peerDependencies": {
     "react": "^16.x",
     "react-dom": "^16.x",
@@ -36,8 +41,8 @@
   },
   "scripts": {
     "start": "start-storybook -p 6006",
-    "docs:deploy": "storybook-to-ghpages",
-    "docs:build": "build-storybook",
+    "docs:deploy": "yarn docs:build && storybook-to-ghpages --existing-output-dir=.out",
+    "docs:build": "build-storybook -o .out -s .storybook/static",
     "test": "jest"
   }
 }
