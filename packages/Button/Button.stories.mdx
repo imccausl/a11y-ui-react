@@ -1,0 +1,20 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+
+import Button from './'
+
+<Meta title="Button" component={Button} />
+
+# Button
+
+`Button` is the basic building-block of many interactive components.
+
+export const Template = (args) => <Button {...args}>Hello</Button>
+
+<Story
+  name="primary"
+  args={{
+    theme: 'primary',
+  }}
+>
+  {Template.bind({})}
+</Story>
