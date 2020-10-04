@@ -1,14 +1,22 @@
 {
-  "name": "react-accessible-ui-components",
+  "name": "a11y-react",
   "version": "1.0.0",
   "description": "Accessible UI component examples for reference",
   "main": "lib/index.js",
-  "repository": "git@github.com:imccausl/react-accessible-ui-components.git",
   "author": "Ian McCausland <imccausl@gmail.com>",
   "license": "MIT",
   "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imccausl/a11y-ui-react.git"
+  },
   "storybook-deployer": {
-    "gitUsername": "Deploy",
+    "gitUsername": "Documentation Deployer",
     "gitEmail": "imccausl@gmail.com",
     "commitMessage": "chore(Deploy): Deploy docs to GitHub Pages"
   },
