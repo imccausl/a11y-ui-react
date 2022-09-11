@@ -56,6 +56,7 @@
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
     "styled-components": "^5.2.0",
+    "typescript": "^4.8.3",
     "yarn": "^1.22.10"
   },
   "scripts": {
@@ -65,5 +66,10 @@
     "docs:build": "build-storybook -o .out -s .storybook/static",
     "release": "cross-env HUSKY_BYPASS=true lerna publish",
     "test": "jest"
+  },
+  "packageManager": "yarn@3.2.3",
+  "dependencies": {
+    "@yarnpkg/sdks": "^3.0.0-rc.18",
+    "core-js": "^3.25.1"
   }
 }

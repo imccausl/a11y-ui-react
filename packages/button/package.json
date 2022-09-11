@@ -22,8 +22,6 @@
     "test": "jest --env=jsdom --passWithNoTests",
     "lint": "concurrently yarn:lint:*",
     "version": "yarn build",
-    "build:esm": "cross-env BABEL_ENV=esm babel src --root-mode upward --extensions .js,.jsx -d lib/esm --source-maps",
-    "build:cjs": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .js,.jsx -d lib/cjs --source-maps",
     "lint:src": "eslint src --ext .ts,.tsx --config ../../.eslintrc",
     "lint:types": "tsc --noEmit"
   }

@@ -14,6 +14,7 @@ export const Template = (args) => <Button {...args}>Hello</Button>
   name="primary"
   args={{
     theme: 'primary',
+    onClick: () => alert('I have been clicked'),
   }}
 >
   {Template.bind({})}
