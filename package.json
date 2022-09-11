@@ -15,11 +15,6 @@
     "type": "git",
     "url": "git+https://github.com/imccausl/a11y-ui-react.git"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "storybook-deployer": {
     "gitUsername": "Documentation Deployer",
     "gitEmail": "imccausl@gmail.com",
@@ -66,7 +61,8 @@
     "docs:deploy": "yarn docs:build && storybook-to-ghpages --existing-output-dir=.out",
     "docs:build": "build-storybook -o .out -s .storybook/static",
     "release": "cross-env HUSKY_BYPASS=true lerna publish",
-    "test": "jest"
+    "test": "jest",
+    "commit-msg": "commitlint --edit"
   },
   "packageManager": "yarn@3.2.3"
 }
