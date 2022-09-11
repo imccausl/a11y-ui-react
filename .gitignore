@@ -4,3 +4,5 @@ lib
 !.yarn/sdks
 !.yarn/releases
 .pnp.*
+.out/**/*
+.out/
