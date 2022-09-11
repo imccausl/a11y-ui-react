@@ -17,8 +17,11 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-docs',
+    '@storybook/addon-actions'
   ],
   features: {
     previewMdx2: true
   }
 }
+
+

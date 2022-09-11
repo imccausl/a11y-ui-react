@@ -10,10 +10,7 @@ module.exports = function (api) {
     [
       '@babel/preset-env',
       {
-        modules: isCommonJS ? 'cjs' : false,
-        targets: {
-          esmodules: isESM ? true : undefined,
-        },
+        targets: "> 0.25%, not dead",
       },
     ],
     '@babel/preset-react',
