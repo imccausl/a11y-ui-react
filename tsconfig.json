@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "packages",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "target": "es5",
@@ -11,11 +10,15 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "moduleResolution": "node",
-    "noEmit": true,
+    "noEmit": false,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "declaration": true,
+    "declarationDir": "lib",
+    "outDir": "lib"
   },
-  "exclude": ["node_modules", ".storybook"]
+  "include": ["packages"],
+  "exclude": ["node_modules", ".storybook", "*.config.*", "config"]
 }

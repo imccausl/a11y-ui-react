@@ -18,12 +18,11 @@
     "url": "git+https://github.com/imccausl/a11y-ui-react.git"
   },
   "scripts": {
-    "build": "concurrently yarn:build:*",
-    "test": "jest --env=jsdom --passWithNoTests",
-    "lint": "concurrently yarn:lint:*",
+    "build": "cd $INIT_CWD && yarn g:ts",
+    "test": "jest",
     "version": "yarn build",
-    "lint:src": "eslint src --ext .ts,.tsx --config ../../.eslintrc",
-    "lint:types": "tsc --noEmit"
+    "lint": "eslint src --ext .ts,.tsx --config ../../.eslintrc",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
@@ -36,6 +35,8 @@
     "@storybook/addon-docs": "^6.5.10",
     "@testing-library/react": "^12.1.5",
     "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2",
+    "@types/styled-components": "^5.1.26",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "17.0.2",

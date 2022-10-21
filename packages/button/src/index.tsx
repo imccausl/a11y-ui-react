@@ -1,30 +1,35 @@
-import React from 'react'
+import * as React from 'react'
 
 import { BaseButtonStyled } from './Button.styles'
 
 enum SubmitType {
-  BUTTON = 'button', 
-  SUBMIT='submit'
-} 
+  BUTTON = 'button',
+  SUBMIT = 'submit',
+}
 
 enum ButtonStyle {
   RAISED = 'raised',
-  FLAT = 'flat'
-} 
+  FLAT = 'flat',
+}
 
-enum Variants  {
-  PRIMARY="primary",
-  SECONDARY="secondary",
+enum Variants {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
 }
 
 export type ButtonProps = {
   submitType?: SubmitType
-  variant?: Variants
+  // variant?: Variants
   onClick: (event?: React.MouseEvent<HTMLButtonElement>) => void
   disabled?: boolean
 }
 
-const Button: React.FC<ButtonProps> = ({ children, variant, onClick, disabled, submitType }) => {
+const Button: React.FC<ButtonProps> = ({
+  children,
+  onClick,
+  disabled,
+  submitType,
+}) => {
   const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!disabled) {
       onClick(e)
@@ -34,7 +39,6 @@ const Button: React.FC<ButtonProps> = ({ children, variant, onClick, disabled, s
   return (
     <BaseButtonStyled
       aria-disabled={disabled}
-      isDisabled={disabled}
       type={submitType}
       onClick={handleOnClick}
     >
@@ -42,6 +46,5 @@ const Button: React.FC<ButtonProps> = ({ children, variant, onClick, disabled, s
     </BaseButtonStyled>
   )
 }
-
 
 export default Button
