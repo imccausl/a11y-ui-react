@@ -8,7 +8,7 @@ describe("Button", () => {
     render(<Button onClick={() => {}} />);
     expect(screen.getByRole("button")).toMatchInlineSnapshot(`
       <button
-        class="cfEZfa"
+        class="sc-bczRLJ cfEZfa"
       />
     `);
   });
