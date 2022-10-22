@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   typescript: {
     check: false,
     checkOptions: {},
@@ -14,6 +14,8 @@ module.exports = {
     previewMdx2: true
   },
   core: {
-    builder: 'webpack5'
+    builder: '@storybook/builder-vite'
   }
 };
+
+export default config
