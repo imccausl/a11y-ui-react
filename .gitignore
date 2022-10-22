@@ -2,6 +2,7 @@ node_modules
 lib
 .yarn/**/*
 !.yarn/sdks
+!.yarn/sdks/**/*
 !.yarn/releases
 .pnp.*
 .out/**
