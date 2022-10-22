@@ -17,7 +17,8 @@
     "strict": true,
     "declaration": true,
     "declarationDir": "lib",
-    "outDir": "lib"
+    "outDir": "lib",
+    "types": ["vitest/globals"]
   },
   "include": ["packages"],
   "exclude": ["node_modules", ".storybook", "*.config.*", "config"]

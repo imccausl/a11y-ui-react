@@ -23,6 +23,14 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "react/prop-types": "off"
-    }
+        "react/prop-types": "off",
+        "@typescript-eslint/no-empty-function": "off"
+        
+    },
+    "overrides": [
+		{
+			"files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+			"extends": ["plugin:testing-library/react"]
+		},
+	]
 }
