@@ -18,7 +18,8 @@
     "declaration": true,
     "declarationDir": "lib",
     "outDir": "lib",
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+    "typeRoots": ["./"]
   },
   "include": ["packages"],
   "exclude": ["node_modules", ".storybook", "*.config.*", "config"]
