@@ -78,7 +78,7 @@
   },
   "scripts": {
     "g:transpile": "babel",
-    "g:ts": "tsc",
+    "g:tsc": "cd $INIT_CWD && tsc",
     "start:dev": "start-storybook -p 6006",
     "docs:deploy": "yarn docs:build && storybook-to-ghpages --existing-output-dir=.out",
     "docs:build": "build-storybook -o .out -s .storybook/static",

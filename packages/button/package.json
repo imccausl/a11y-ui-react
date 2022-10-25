@@ -18,8 +18,8 @@
     "url": "git+https://github.com/imccausl/a11y-ui-react.git"
   },
   "scripts": {
-    "build": "cd $INIT_CWD && yarn g:ts",
-    "test": "jest",
+    "build": "yarn g:tsc",
+    "test": "yarn g:test",
     "version": "yarn build",
     "lint": "eslint src --ext .ts,.tsx --config ../../.eslintrc",
     "typecheck": "tsc --noEmit"

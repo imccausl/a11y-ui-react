@@ -15,12 +15,9 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "declaration": true,
-    "declarationDir": "lib",
-    "outDir": "lib",
-    "types": ["vitest/globals"],
-    "typeRoots": ["./"]
+    "declaration": false,
+    "types": ["vitest/globals"]
   },
-  "include": ["packages"],
-  "exclude": ["node_modules", ".storybook", "*.config.*", "config"]
+  "include": ["packages/**/*", "*.{ts,js}"],
+  "exclude": ["node_modules"]
 }
