@@ -18,6 +18,6 @@
     "declaration": false,
     "types": ["vitest/globals"]
   },
-  "include": ["packages/**/*", "*.{ts,js}"],
-  "exclude": ["node_modules"]
+  "include": ["packages", "@types"],
+  "exclude": ["**/node_modules"]
 }
