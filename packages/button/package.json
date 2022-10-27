@@ -7,6 +7,7 @@
   "license": "MIT",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
+  "sideEffects": false,
   "files": [
     "lib"
   ],
@@ -18,10 +19,10 @@
     "url": "git+https://github.com/imccausl/a11y-ui-react.git"
   },
   "scripts": {
-    "build": "yarn g:tsc",
+    "build": "yarn g:tsc --module commonjs --outDir lib/cjs && yarn g:tsc --module esnext --outDir lib/esm",
     "test": "yarn g:test",
     "version": "yarn build",
-    "lint": "eslint src --ext .ts,.tsx --config ../../.eslintrc",
+    "lint": "run -T eslint src --ext .ts,.tsx --config ../../.eslintrc.json",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {

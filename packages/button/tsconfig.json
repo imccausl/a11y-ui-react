@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src"],
+  "include": ["src", "index.ts"],
   "exclude": ["stories"],
   "compilerOptions": {
     "declaration": true,
