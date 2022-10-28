@@ -1,6 +1,6 @@
 {
   "name": "@a11y-react/button",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "An accessible react button component",
   "author": "Ian McCausland <imccausl@gmail.com>",
   "homepage": "https://docs.a11y-react.com",
