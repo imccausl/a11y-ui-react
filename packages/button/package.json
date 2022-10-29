@@ -1,8 +1,7 @@
 {
   "name": "@a11y-react/button",
+  "group": "core",
   "version": "0.0.0",
-  "description": "An accessible react button component",
-  "author": "Ian McCausland <imccausl@gmail.com>",
   "homepage": "https://docs.a11y-react.com",
   "license": "MIT",
   "main": "src/index.ts",

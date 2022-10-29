@@ -1,5 +1,6 @@
 {
   "name": "@a11y-react/core",
+  "group": "core",
   "version": "0.0.0",
   "description": "Accessible react component examples",
   "homepage": "https://docs.a11y-react.com",

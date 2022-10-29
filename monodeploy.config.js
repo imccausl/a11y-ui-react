@@ -1,4 +1,4 @@
-module.exports = { 
+module.exports = {
   preset: 'monodeploy/recommended',
   git: {
     commitSha: 'HEAD',
@@ -9,4 +9,5 @@ module.exports = {
   access: 'infer',
   persistVersions: false,
   changesetIgnorePatterns: ['**/*.test.js'],
+  packageGroupManifestField: 'group'
 }
