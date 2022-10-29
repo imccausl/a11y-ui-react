@@ -9,5 +9,5 @@ module.exports = {
   access: 'infer',
   persistVersions: false,
   changesetIgnorePatterns: ['**/*.test.js'],
-  packageGroupManifestField: 'group'
+  packageGroupManifestField: 'publishConfig.group'
 }

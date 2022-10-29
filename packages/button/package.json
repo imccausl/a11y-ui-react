@@ -1,6 +1,5 @@
 {
   "name": "@a11y-react/button",
-  "group": "core",
   "version": "0.0.0",
   "homepage": "https://docs.a11y-react.com",
   "license": "MIT",
@@ -14,7 +13,8 @@
     "module": "./lib/index.esm.js",
     "registry": "https://registry.npmjs.org/",
     "types": "./lib/index.d.ts",
-    "access": "public"
+    "access": "public",
+    "group": "@a11y-react/core"
   },
   "repository": {
     "type": "git",

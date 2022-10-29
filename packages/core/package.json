@@ -1,6 +1,5 @@
 {
   "name": "@a11y-react/core",
-  "group": "core",
   "version": "0.0.0",
   "description": "Accessible react component examples",
   "homepage": "https://docs.a11y-react.com",
@@ -24,7 +23,8 @@
     "module": "./lib/index.esm.js",
     "registry": "https://registry.npmjs.org/",
     "types": "./lib/index.d.ts",
-    "access": "public"
+    "access": "public",
+    "group": "@a11y-react/core"
   },
   "repository": {
     "type": "git",
