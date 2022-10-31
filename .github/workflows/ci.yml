@@ -1,0 +1,63 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v3
+        
+      - name: Prepare Environment
+        uses: ./.github/actions/prepare-env.yml
+      
+      - name: Build packages
+        run: yarn turbo run build
+      
+  tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v3
+        
+      - name: Prepare Environment
+        uses: ./.github/actions/prepare-env.yml
+      
+      - name: Run Tests
+        run: yarn turbo run test
+        
+  lint:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v3
+        
+      - name: Prepare Environment
+        uses: ./.github/actions/prepare-env.yml
+      
+      - name: Run ESLint
+        run: yarn turbo run lint
+  
+  types:
+    name: Check Types
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v3
+      
+      - name: Prepare Environment
+        uses: ./.github/actions/prepare-env.yml
+      
+      - name: Check Types
+        run: yarn typecheck
+    
