@@ -1,0 +1,43 @@
+name: prepare-env
+description: Prepares Envionrment
+inputs:
+  cache-prefix:
+    name: Additonal cache prefix
+    required: false
+    default: default
+runs:
+  using: "composite"
+  steps:
+    - name: Detect Node Version
+      id: detect-node
+      run: echo "::set-output name=version::$(cat .nvmrc | tr -d '\n')"
+      shell: bash
+    - name: Setup NOde
+      uses: actions/setup=node@v3.5.1
+      with:
+        node-version: ${{ steps.detect-node.outputs.version }}
+    - name: Enable corepack
+      run: corepack enable
+      shell: bash
+    - name: Restore Yarn Cache
+      id: yarn-cache
+      uses: actions/cache@v3.0.11
+      with:
+        path: |
+          .yarn/cache
+          .pnp.*
+        key: ${{ inputs.cache-prefix }}-${{ steps.detect-node.outputs.version }}-${{ hashFiles('yarn.lock') }}
+    - name: Yarn Install
+      run: yarn install --immutable
+      shell: bash
+    - name: Create artifacts directory
+      run: mkdir -p artifacts
+      shell: bash
+    - name: Configure git
+      run: |
+        git config --global user.name a11y-react
+        git config --global user.email imccausl@gmail.com
+      shell: bash
+
+    
+  
