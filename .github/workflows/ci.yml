@@ -12,6 +12,7 @@ env:
 jobs:
   commit-watch:
     runs-on: ubuntu-latest
+    if: "github.event_name == 'pull_request'"
     steps:
       - name: Checkout Branch
         uses: actions/checkout@v3
