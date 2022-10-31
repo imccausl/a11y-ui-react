@@ -7,15 +7,15 @@ enum SubmitType {
   SUBMIT = 'submit',
 }
 
-enum ButtonStyle {
-  RAISED = 'raised',
-  FLAT = 'flat',
-}
+// enum ButtonStyle {
+//   RAISED = 'raised',
+//   FLAT = 'flat',
+// }
 
-enum Variants {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-}
+// enum Variants {
+//   PRIMARY = 'primary',
+//   SECONDARY = 'secondary',
+// }
 
 export type ButtonProps = {
   submitType?: SubmitType
