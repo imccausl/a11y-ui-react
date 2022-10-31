@@ -11,6 +11,9 @@ runs:
         node-version-file: '.nvmrc'
         registry-url: 'https://registry.npmjs.org'
         cache: 'yarn'
+        cache-depdendency-path: |
+          .yarn/cache
+          .pnp.*
 
     - name: Enable corepack
       run: corepack enable
