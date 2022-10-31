@@ -14,14 +14,8 @@ runs:
         cache-dependency-path: |
           .yarn/cache
           .pnp.*
-
-    - name: Enable corepack
       run: corepack enable
-      shell: bash
-
-    - name: Yarn Install
       run: yarn install --immutable
-      shell: bash
 
     - name: Configure git
       run: |
