@@ -15,49 +15,48 @@ jobs:
     steps:
       - name: Checkout Branch
         uses: actions/checkout@v3
-        
+
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env.yml
-      
+
       - name: Build packages
-        run: yarn turbo run build
-      
+        run: yarn prepack
+
   tests:
     name: Run Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Branch
         uses: actions/checkout@v3
-        
+
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env.yml
-      
+
       - name: Run Tests
-        run: yarn turbo run test
-        
+        run: yarn test
+
   lint:
     name: Linting
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Branch
         uses: actions/checkout@v3
-        
+
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env.yml
-      
+
       - name: Run ESLint
-        run: yarn turbo run lint
-  
+        run: yarn lint
+
   types:
     name: Check Types
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Branch
         uses: actions/checkout@v3
-      
+
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env.yml
-      
+
       - name: Check Types
         run: yarn typecheck
-    

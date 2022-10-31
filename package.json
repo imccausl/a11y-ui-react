@@ -89,6 +89,8 @@
     "g:coverage": "vitest --coverage",
     "commit-msg": "commitlint --edit",
     "prepack": "turbo run build",
-    "typecheck": "tsc --noEmit"
+    "test": "turbo run test",
+    "lint": "turbu run lint",
+    "typecheck": "turbo run typecheck"
   }
 }
