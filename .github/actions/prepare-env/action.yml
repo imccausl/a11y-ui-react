@@ -11,7 +11,7 @@ runs:
         node-version-file: '.nvmrc'
         registry-url: 'https://registry.npmjs.org'
         cache: 'yarn'
-        cache-depdendency-path: |
+        cache-dependency-path: |
           .yarn/cache
           .pnp.*
 
