@@ -38,6 +38,3 @@ runs:
         git config --global user.name a11y-react
         git config --global user.email imccausl@gmail.com
       shell: bash
-
-    
-  
