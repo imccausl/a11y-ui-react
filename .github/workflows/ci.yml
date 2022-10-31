@@ -19,6 +19,9 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
+      - name: Prepare Environment
+        uses: ./.github/actions/prepare-env
+
       - name: Run Commit Watch
         env:
           COMMIT_WATCH_OUTPUT_DIR: ${{ env.ARTIFACTS_DIR }}
