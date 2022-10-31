@@ -14,16 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     if: "github.event_name == 'pull_request'"
     steps:
-      - name: Checkout Branch
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
-
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env
-
-      - name: Run Commit Watch
+      - name: Commit Watch
         env:
           COMMIT_WATCH_OUTPUT_DIR: ${{ env.ARTIFACTS_DIR }}
           COMMITWATCH_GITHUB_TOKEN: ${{ secrets.PR_BOT_GITHUB_TOKEN }}
@@ -37,50 +34,38 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Branch
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v3
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env
-
       - name: Build packages
         run: yarn prepack
 
   tests:
-    name: Run Tests
+    name: Tests
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Branch
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v3
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env
-
       - name: Run Tests
         run: yarn test
 
   lint:
-    name: Linting
+    name: Lint
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Branch
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v3
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env
-
       - name: Run ESLint
         run: yarn lint
 
   types:
-    name: Check Types
+    name: Typecheck
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Branch
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v3
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env
-
       - name: Check Types
         run: yarn typecheck
