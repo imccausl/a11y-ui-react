@@ -90,7 +90,7 @@
     "commit-msg": "commitlint --edit",
     "prepack": "turbo run build",
     "test": "turbo run test",
-    "lint": "turbu run lint",
+    "lint": "turbo run lint",
     "typecheck": "turbo run typecheck"
   }
 }
