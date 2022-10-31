@@ -20,6 +20,9 @@
     "lint": {
       "outputs": []
     },
+    "typecheck": {
+      "outputs": []
+    },
     "deploy": {
       "dependsOn": [
         "build",
