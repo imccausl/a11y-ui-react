@@ -14,7 +14,7 @@ const config = {
     previewMdx2: true
   },
   core: {
-    builder: '@storybook/builder-vite'
+    builder: 'webpack5'
   }
 };
 
