@@ -30,46 +30,30 @@ jobs:
           CI_BASE_BRANCH: origin/${{ github.base_ref }}
         run: yarn dlx commit-watch
 
-  build:
-    name: Build
+  build-and-test:
+    name: Build & Test
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - uses: actions/checkout@v3
+
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env
+
+      - uses: actions/cache@v3
+        with:
+          path: .turbo
+          key: ${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: ${{ github.job }}-${{ github.ref_name }}-
+
       - name: Build packages
         run: yarn prepack
 
-  tests:
-    name: Tests
-    runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
-    steps:
-      - uses: actions/checkout@v3
-      - name: Prepare Environment
-        uses: ./.github/actions/prepare-env
-      - name: Run Tests
+      - name: Tests
         run: yarn test
 
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
-    steps:
-      - uses: actions/checkout@v3
-      - name: Prepare Environment
-        uses: ./.github/actions/prepare-env
-      - name: Run ESLint
+      - name: Lint
         run: yarn lint
 
-  types:
-    name: Typecheck
-    runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
-    steps:
-      - uses: actions/checkout@v3
-      - name: Prepare Environment
-        uses: ./.github/actions/prepare-env
-      - name: Check Types
+      - name: Typecheck
         run: yarn typecheck

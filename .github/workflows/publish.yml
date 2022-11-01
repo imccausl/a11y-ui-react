@@ -1,12 +1,7 @@
 name: Deploy & Publish
 
 on:
-  workflow_run:
-    workflows: ['Continuous Integration']
-    paths:
-      - '**/packages/**/*'
-    branches:
-      - main
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -41,7 +36,7 @@ jobs:
       - name: Publish Packages
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-          GH_TOKEN: ${{ secrets.PR_BOT_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn monodeploy --log-level 0 --config-file monodeploy.config.js --push
 
   deploy-storybook:
