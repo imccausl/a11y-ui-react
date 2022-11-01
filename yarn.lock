@@ -5696,9 +5696,11 @@ __metadata:
     babel-plugin-module-resolver: ^4.1.0
     core-js: ^3.25.1
     eslint: ^8.23.0
+    eslint-config-turbo: ^0.0.4
     eslint-plugin-react: latest
     eslint-plugin-storybook: ^0.6.6
     eslint-plugin-testing-library: ^5.9.1
+    eslint-plugin-turbo: ^0.0.4
     husky: ^8.0.1
     jsdom: ^20.0.1
     lint-staged: ^13.0.3
@@ -9447,6 +9449,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-turbo@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "eslint-config-turbo@npm:0.0.4"
+  dependencies:
+    eslint-plugin-turbo: 0.0.4
+  peerDependencies:
+    eslint: ^7.23.0 || ^8.0.0
+  checksum: 5f89b557c0ebefe558315fdb6c2a2b800084ecb8c1cd170998c3b29f359885c5b40f48393a1657c36a868b3b9d89cd23503c3d927103cd9ca58e4d3aaccb6888
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-react@npm:latest":
   version: 7.31.8
   resolution: "eslint-plugin-react@npm:7.31.8"
@@ -9493,6 +9506,15 @@ __metadata:
   peerDependencies:
     eslint: ^7.5.0 || ^8.0.0
   checksum: d09f9486945807e9587d52b6979117bc41b750df741567381a06219671096afb318696a0e0db63e253e150fead40e77ef9653ee00f1dda83fc8920e3b3c47107
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-turbo@npm:0.0.4, eslint-plugin-turbo@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "eslint-plugin-turbo@npm:0.0.4"
+  peerDependencies:
+    eslint: ^7.23.0 || ^8.0.0
+  checksum: c2a27226ae46b6cc4a747a6d82eefc7efa5df14542dcf84806e72564e11d1d76971284e73b44ee36e5bf33eb13519fe2b5d71b783c1789c185da1519caf54cb5
   languageName: node
   linkType: hard
 

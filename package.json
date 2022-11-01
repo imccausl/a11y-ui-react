@@ -16,10 +16,18 @@
     "type": "git",
     "url": "git+https://github.com/imccausl/a11y-ui-react.git"
   },
-  "storybook-deployer": {
-    "gitUsername": "Documentation Deployer",
-    "gitEmail": "imccausl@gmail.com",
-    "commitMessage": "chore(Deploy): Deploy docs to GitHub Pages"
+  "scripts": {
+    "g:tsc": "cd $INIT_CWD && tsc",
+    "start:dev": "start-storybook -p 6006",
+    "docs:deploy": "yarn docs:build && storybook-to-ghpages --existing-output-dir=.out --ci",
+    "docs:build": "build-storybook -o .out -s .storybook/static",
+    "g:test": "vitest",
+    "g:coverage": "vitest --coverage",
+    "commit-msg": "commitlint --edit",
+    "prepack": "turbo run build --cache-dir=\".turbo\"",
+    "test": "turbo run test --cache-dir=\".turbo\"",
+    "lint": "turbo run lint --cache-dir=\".turbo\"",
+    "typecheck": "turbo run typecheck --cache-dir=\".turbo\""
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
@@ -56,9 +64,11 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "core-js": "^3.25.1",
     "eslint": "^8.23.0",
+    "eslint-config-turbo": "^0.0.4",
     "eslint-plugin-react": "latest",
     "eslint-plugin-storybook": "^0.6.6",
     "eslint-plugin-testing-library": "^5.9.1",
+    "eslint-plugin-turbo": "^0.0.4",
     "husky": "^8.0.1",
     "jsdom": "^20.0.1",
     "lint-staged": "^13.0.3",
@@ -80,17 +90,9 @@
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.2"
   },
-  "scripts": {
-    "g:tsc": "cd $INIT_CWD && tsc",
-    "start:dev": "start-storybook -p 6006",
-    "docs:deploy": "yarn docs:build && storybook-to-ghpages --existing-output-dir=.out --ci",
-    "docs:build": "build-storybook -o .out -s .storybook/static",
-    "g:test": "vitest",
-    "g:coverage": "vitest --coverage",
-    "commit-msg": "commitlint --edit",
-    "prepack": "turbo run build --cache-dir=\".turbo\"",
-    "test": "turbo run test --cache-dir=\".turbo\"",
-    "lint": "turbo run lint --cache-dir=\".turbo\"",
-    "typecheck": "turbo run typecheck --cache-dir=\".turbo\""
+  "storybook-deployer": {
+    "gitUsername": "Documentation Deployer",
+    "gitEmail": "imccausl@gmail.com",
+    "commitMessage": "chore(Deploy): Deploy docs to GitHub Pages"
   }
 }

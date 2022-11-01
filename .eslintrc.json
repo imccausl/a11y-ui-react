@@ -8,7 +8,8 @@
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:storybook/recommended"
+        "plugin:storybook/recommended",
+        "turbo"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -17,6 +18,11 @@
         },
         "ecmaVersion": "latest",
         "sourceType": "module"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     },
     "plugins": [
         "react",
