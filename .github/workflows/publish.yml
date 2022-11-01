@@ -36,7 +36,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.PR_BOT_GITHUB_TOKEN }}
           fetch-depth: 0
       - uses: ./.github/actions/prepare-env
       - name: Publish Packages
@@ -48,3 +47,15 @@ jobs:
             --log-level 0 \
             --config-file ./monodeploy.config.js \
             --push \
+
+  deploy-storybook:
+    name: Build & Deploy Storybook
+    runs-on: ubuntu-latest
+    needs: [pre-release-check]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions.prepare-env
+      - run: yarn docs:deploy
+        env: GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
