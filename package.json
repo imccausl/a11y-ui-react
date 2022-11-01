@@ -79,12 +79,10 @@
     "@types/react-dom": "17.0.2"
   },
   "scripts": {
-    "g:transpile": "babel",
     "g:tsc": "cd $INIT_CWD && tsc",
     "start:dev": "start-storybook -p 6006",
-    "docs:deploy": "yarn docs:build && storybook-to-ghpages --existing-output-dir=.out",
+    "docs:deploy": "yarn docs:build && storybook-to-ghpages --existing-output-dir=.out --ci",
     "docs:build": "build-storybook -o .out -s .storybook/static",
-    "release": "cross-env HUSKY_BYPASS=true lerna publish",
     "g:test": "vitest",
     "g:coverage": "vitest --coverage",
     "commit-msg": "commitlint --edit",

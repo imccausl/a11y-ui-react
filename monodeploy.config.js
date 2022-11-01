@@ -1,4 +1,5 @@
 module.exports = {
+  dryRun: process.env.CI === 1 ? true : false,
   preset: 'monodeploy/preset-recommended',
   git: {
     commitSha: 'HEAD',
@@ -7,7 +8,13 @@ module.exports = {
   },
   conventionalChangelogConfig: '@tophat/conventional-changelog-config',
   access: 'infer',
-  persistVersions: false,
+  persistVersions: process.env.CI === 1 ? true : false,
   changesetIgnorePatterns: ['**/*.test.js', '**/stories/**/*'],
-  packageGroupManifestField: 'publishConfig.group'
+  packageGroupManifestField: 'publishConfig.group',
+  changelogFilename: '<packageDir>/CHANGELOG.md',
+  plugins: [
+    '@monodeploy/plugin-github'
+  ],
+  autoCommit: process.env.CI === 1 ? true : false,
+  autoCommitMessage: "chore: publish packages [skip ci]",
 }
