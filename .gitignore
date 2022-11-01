@@ -6,6 +6,7 @@ lib
 !.yarn/releases
 .pnp.*
 .out/**
+.out
 .turbo
 lib/**
 dist/**
