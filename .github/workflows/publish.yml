@@ -1,11 +1,16 @@
 name: Deploy & Publish
 
 on:
-  push:
+  workflow_run:
+    workflows: ['Continuous Integration']
     paths:
       - '**/packages/**/*'
     branches:
       - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   ARTIFACTS_DIR: ./artifacts
