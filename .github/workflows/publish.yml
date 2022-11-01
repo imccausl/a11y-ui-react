@@ -46,7 +46,7 @@ jobs:
           yarn monodeploy \ 
             --log-level 0 \
             --config-file ./monodeploy.config.js \
-            --push \
+            --push
 
   deploy-storybook:
     name: Build & Deploy Storybook
@@ -56,7 +56,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: ./.github/actions.prepare-env
+      - uses: ./.github/actions/prepare-env
       - run: yarn docs:deploy
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
