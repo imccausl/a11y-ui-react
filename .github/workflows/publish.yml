@@ -42,11 +42,7 @@ jobs:
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GH_TOKEN: ${{ secrets.PR_BOT_GITHUB_TOKEN }}
-        run: |
-          yarn monodeploy \ 
-            --log-level 0 \
-            --config-file ./monodeploy.config.js \
-            --push
+        run: yarn monodeploy --log-level 0 --config-file monodeploy.config.js --push
 
   deploy-storybook:
     name: Build & Deploy Storybook
