@@ -1,12 +1,7 @@
 name: Deploy & Publish
 
 on:
-  workflow_run:
-    workflows: ['Continuous Integration']
-    paths:
-      - '**/packages/**/*'
-    branches:
-      - main
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
