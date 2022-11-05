@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!disabled) {
-      console.log("trigger publish for testing")
+      console.log('trigger publish for testing')
       onClick(e)
     }
   }
