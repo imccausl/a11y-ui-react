@@ -1,0 +1,44 @@
+{
+  "name": "@a11y-react/design-tokens",
+  "version": "0.0.0",
+  "description": "A11y React design tokens",
+  "homepage": "https://docs.a11y-react.com",
+  "license": "MIT",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "sideEffects": false,
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "design-system",
+    "tokens",
+    "design-tokens",
+    "WCAG",
+    "accessible",
+    "ui"
+  ],
+  "publishConfig": {
+    "main": "./lib/index.cjs.js",
+    "module": "./lib/index.esm.js",
+    "registry": "https://registry.npmjs.org/",
+    "types": "./lib/index.d.ts",
+    "access": "public",
+    "group": "@a11y-react/core"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imccausl/a11y-ui-react.git",
+    "directory": "packages/core"
+  },
+  "scripts": {
+    "build": "",
+    "test": "",
+    "lint": "run -T eslint src --ext .ts,.tsx --config ../../.eslintrc.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.7.1",
+    "vitest": "^0.24.3"
+  }
+}

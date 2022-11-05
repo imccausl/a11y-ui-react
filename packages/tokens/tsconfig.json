@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src", "index.ts"],
+  "exclude": ["stories"],
+  "compilerOptions": {
+    "declaration": true,
+    "rootDir": "src",
+    "outDir": "lib",
+    "declarationDir": "lib"
+  }
+}
