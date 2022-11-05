@@ -29,6 +29,9 @@
         "react",
         "@typescript-eslint"
     ],
+    "ignorePatterns": [
+        "**/lib/**/*"
+    ],
     "rules": {
         "react/prop-types": "off",
         "@typescript-eslint/no-empty-function": "off",
