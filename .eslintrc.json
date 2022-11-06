@@ -47,6 +47,12 @@
 		{
 			"files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
 			"extends": ["plugin:testing-library/react"]
-		}
+		},
+        {
+            "files": ["**/design-docs/**/*"],
+            "rules": {
+                "react/react-in-jsx-scope": "off"
+            }
+        }
 	]
 }

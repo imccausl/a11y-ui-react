@@ -9,7 +9,8 @@
   "packageManager": "yarn@3.2.4",
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "design-docs"
     ]
   },
   "repository": {
