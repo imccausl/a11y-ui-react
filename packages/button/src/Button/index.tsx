@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { BaseButtonStyled } from './Button.styles'
+import { ButtonPrimary } from './Button.styles'
 
 enum SubmitType {
   BUTTON = 'button',
@@ -38,13 +38,13 @@ const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <BaseButtonStyled
+    <ButtonPrimary
       aria-disabled={disabled}
       type={submitType}
       onClick={handleOnClick}
     >
       {children}
-    </BaseButtonStyled>
+    </ButtonPrimary>
   )
 }
 

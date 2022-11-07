@@ -19,7 +19,8 @@
   },
   "scripts": {
     "g:tsc": "cd $INIT_CWD && tsc",
-    "start:dev": "start-storybook -p 6006",
+    "start:sb:dev": "start-storybook -p 6006",
+    "start:design-docs:dev": "yarn workspace @a11y-react/design-docs dev",
     "docs:deploy": "yarn docs:build && storybook-to-ghpages --existing-output-dir=.out --ci",
     "docs:build": "build-storybook -o .out -s .storybook/static",
     "g:test": "vitest",
