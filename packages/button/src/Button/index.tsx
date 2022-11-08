@@ -7,11 +7,6 @@ enum SubmitType {
   SUBMIT = 'submit',
 }
 
-// enum ButtonStyle {
-//   RAISED = 'raised',
-//   FLAT = 'flat',
-// }
-
 enum Variants {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
@@ -19,18 +14,30 @@ enum Variants {
 }
 
 export type ButtonProps = {
+  /**
+   * Default: "button". Can be one of either "button" or "submit". Sets the button type.
+   */
   submitType?: SubmitType
+  /**
+   * Default: "secondary". Can be one of either "primary", "secondary", or "minimal". Sets the button style (variant).
+   */
   variant?: Variants
+  /**
+   * Sets the action the button should perform on click or if space or enter is typed when the button is in focus.
+   */
   onClick: (event?: React.MouseEvent<HTMLButtonElement>) => void
+  /**
+   * Default: false. Sets whether the button can be clicked or not.
+   */
   disabled?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
-  disabled,
-  submitType,
-  variant,
+  disabled = false,
+  submitType = SubmitType.BUTTON,
+  variant = Variants.SECONDARY,
 }) => {
   const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!disabled) {
