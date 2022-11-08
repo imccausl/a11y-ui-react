@@ -8,7 +8,9 @@ describe('Button', () => {
     render(<Button onClick={() => {}} />)
     expect(screen.getByRole('button')).toMatchInlineSnapshot(`
       <button
-        class="sc-bczRLJ sc-gsnTZi imaZpv hluzdv"
+        aria-disabled="false"
+        class="sc-bczRLJ sc-dkzDqf cqwlJk fXmswN"
+        type="button"
       />
     `)
   })
