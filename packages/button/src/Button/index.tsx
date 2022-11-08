@@ -1,6 +1,6 @@
-import * as React from 'react'
+import React, { useMemo } from 'react'
 
-import { ButtonPrimary } from './Button.styles'
+import { ButtonPrimary, ButtonSecondary, ButtonMinimal } from './Button.styles'
 
 enum SubmitType {
   BUTTON = 'button',
@@ -12,14 +12,15 @@ enum SubmitType {
 //   FLAT = 'flat',
 // }
 
-// enum Variants {
-//   PRIMARY = 'primary',
-//   SECONDARY = 'secondary',
-// }
+enum Variants {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+  MINIMAL = 'minimal',
+}
 
 export type ButtonProps = {
   submitType?: SubmitType
-  // variant?: Variants
+  variant?: Variants
   onClick: (event?: React.MouseEvent<HTMLButtonElement>) => void
   disabled?: boolean
 }
@@ -29,6 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   disabled,
   submitType,
+  variant,
 }) => {
   const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!disabled) {
@@ -37,14 +39,25 @@ const Button: React.FC<ButtonProps> = ({
     }
   }
 
+  const ButtonComponent = useMemo(() => {
+    switch (variant) {
+      case Variants.PRIMARY:
+        return ButtonPrimary
+      case Variants.MINIMAL:
+        return ButtonMinimal
+      default:
+        return ButtonSecondary
+    }
+  }, [variant])
+
   return (
-    <ButtonPrimary
+    <ButtonComponent
       aria-disabled={disabled}
       type={submitType}
       onClick={handleOnClick}
     >
       {children}
-    </ButtonPrimary>
+    </ButtonComponent>
   )
 }
 

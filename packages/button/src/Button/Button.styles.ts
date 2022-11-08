@@ -12,9 +12,32 @@ const BaseButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+
+  &:focus {
+    outline: 0;
+  }
 `
 
 export const ButtonPrimary = styled(BaseButton)`
   background-color: #eee2fc; // voilet30 for light theme?
-  border: 0.125rem solid #8933eb; // voilet70 for light theme?
+  border: 0.09375rem solid #8933eb; // voilet70 for light theme?
+
+  &:focus {
+    box-shadow: 0 0 0 2px #eee2fc, 0 0 0 4px #5711a7; //voilet 90
+  }
+`
+
+export const ButtonSecondary = styled(BaseButton)`
+  background-color: #ffffff; // white for light theme?
+  border: 0.09375rem solid #ced4da; // gray30 for light theme?
+
+  &:focus {
+    box-shadow: 0 0 0 2px #eee2fc, 0 0 0 4px #5711a7; //voilet 90
+  }
+`
+
+export const ButtonMinimal = styled(BaseButton)`
+  &:focus {
+    background-color: #eee2fc; // voilet30 for light theme?
+  }
 `
