@@ -1,23 +1,31 @@
-export const color = {
+import { color } from '../../core/color'
+
+export const theme = {
   text: {
     button: {
       primary: {
         default: {
-          value: '{core.color.gray.100}',
+          value: color.gray[100].value,
         },
-        disabled: {},
+        disabled: {
+          value: color.gray[70].value,
+        },
       },
       secondary: {
         default: {
-          value: '{core.color.gray.100}',
+          value: color.gray[100].value,
         },
-        disabled: {},
+        disabled: {
+          value: color.gray[70].value,
+        },
       },
       minimal: {
         default: {
-          value: '{core.color.gray.100}',
+          value: color.gray[100].value,
         },
-        disabled: {},
+        disabled: {
+          value: color.gray[70].value,
+        },
       },
     },
   },
