@@ -2,15 +2,21 @@ export const color = {
   text: {
     button: {
       primary: {
-        default: {},
+        default: {
+          value: '{core.color.gray.100}',
+        },
         disabled: {},
       },
       secondary: {
-        default: {},
+        default: {
+          value: '{core.color.gray.100}',
+        },
         disabled: {},
       },
       minimal: {
-        default: {},
+        default: {
+          value: '{core.color.gray.100}',
+        },
         disabled: {},
       },
     },
