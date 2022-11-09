@@ -1,0 +1,29 @@
+{
+  "name": "@a11y-react/design-docs",
+  "version": "0.0.0",
+  "description": "a11y react design system documentation site",
+  "homepage": "https://docs.a11y-react.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imccausl/a11y-ui-react.git",
+    "directory": "design-docs"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^13.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "typescript": "4.8.4"
+  }
+}

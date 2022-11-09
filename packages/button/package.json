@@ -9,8 +9,8 @@
     "lib"
   ],
   "publishConfig": {
-    "main": "./lib/index.cjs.js",
-    "module": "./lib/index.esm.js",
+    "main": "./lib/cjs/index.js",
+    "module": "./lib/esm/index.js",
     "registry": "https://registry.npmjs.org/",
     "types": "./lib/index.d.ts",
     "access": "public",

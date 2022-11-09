@@ -2,20 +2,62 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs'
 
 import { Button } from '../src'
 
-<Meta title="Button" component={Button} />
+<Meta
+  title="Button"
+  component={Button}
+  argTypes={{
+    variant: {
+      options: ['primary', 'secondary', 'minimal'],
+      control: { type: 'select' },
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    submitType: {
+      options: ['button', 'submit'],
+      control: { type: 'radio' },
+    },
+  }}
+/>
 
 # Button
 
-`Button` is the basic building-block of many interactive components. Testing monodeploy.
+`Button` is the basic building-block of many interactive components.
 
-export const Template = (args) => <Button {...args}>Hello</Button>
+export const Template = (args) => (
+  <Button {...args}>
+    {args.variant.replace(args.variant[0], args.variant[0].toUpperCase())}
+  </Button>
+)
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{
+      variant: 'primary',
+      onClick: () => alert('I have been clicked'),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 
 <Story
-  name="primary"
+  name="Secondary"
   args={{
-    theme: 'primary',
+    variant: 'secondary',
     onClick: () => alert('I have been clicked'),
   }}
 >
   {Template.bind({})}
 </Story>
+
+  <Story
+    name="Minimal"
+    args={{
+      variant: 'minimal',
+      onClick: () => alert('I have been clicked'),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

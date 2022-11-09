@@ -9,7 +9,8 @@
   "packageManager": "yarn@3.2.4",
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "design-docs"
     ]
   },
   "repository": {
@@ -18,7 +19,8 @@
   },
   "scripts": {
     "g:tsc": "cd $INIT_CWD && tsc",
-    "start:dev": "start-storybook -p 6006",
+    "start:sb:dev": "start-storybook -p 6006",
+    "start:design-docs:dev": "yarn workspace @a11y-react/design-docs dev",
     "docs:deploy": "yarn docs:build && storybook-to-ghpages --existing-output-dir=.out --ci",
     "docs:build": "build-storybook -o .out -s .storybook/static",
     "g:test": "vitest",
@@ -64,7 +66,9 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "core-js": "^3.25.1",
     "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-config-turbo": "^0.0.4",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "latest",
     "eslint-plugin-storybook": "^0.6.6",
     "eslint-plugin-testing-library": "^5.9.1",
@@ -79,12 +83,15 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
+    "require-from-string": "^2.0.2",
+    "style-dictionary": "^3.7.1",
     "styled-components": "^5.3.5",
     "turbo": "^1.4.6",
     "typescript": "^4.8.4",
     "vite": "^3.2.2",
     "vitest": "^0.24.3",
-    "webpack": "^5.74.0"
+    "webpack": "^5.74.0",
+    "workspace": "^0.0.1-preview.1"
   },
   "resolutions": {
     "@types/react": "17.0.2",
