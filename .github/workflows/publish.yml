@@ -41,13 +41,38 @@ jobs:
 
   deploy-storybook:
     name: Build & Deploy Storybook
+    permissions:
+        pages: write
+        id-token: write
+    concurrency:
+      group: "storybook"
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-storybook.outputs.url }}
     runs-on: ubuntu-latest
     needs: [pre-release-check]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - uses: ./.github/actions/prepare-env
-      - run: yarn docs:deploy
-        env:
-          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cache Storybook Assets
+        uses: actions/cache@v3
+        with:
+          path: ./.out
+          key: storybook-assets-${{ hashFiles('**/package.json', '**/yarn.lock') }}-${{ hashFiles('**.storybook.*')}}
+
+      - name: Build Storybook
+        run: yarn docs:build
+
+      - name: Upload Storybook Artifacts
+        uses: actions/upload-pages-artifacts@v2
+        with:
+          artifacts: ./.out
+
+      - name: Deploy Storybook
+        id: deploy-storybook
+        uses: actions/deploy-pages@v3

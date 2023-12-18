@@ -1,9 +1,8 @@
 node_modules
 lib
-.yarn/**/*
-!.yarn/sdks
-!.yarn/sdks/**/*
-!.yarn/releases
+.yarn/cache
+.yarn/unplugged
+install-state.gz
 .pnp.*
 .out/**
 .out
@@ -11,4 +10,3 @@ lib
 lib/**
 dist/**
 build/**
-.yarnrc.yml
