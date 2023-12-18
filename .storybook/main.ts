@@ -1,3 +1,4 @@
+import { dirname, join } from "path";
 const config = {
   typescript: {
     check: false,
@@ -8,14 +9,36 @@ const config = {
       propFilter: prop => prop.parent ? !/node_modules/.test(prop.parent.fileName) : true
     }
   },
+
   stories: ['../packages/**/*/*.stories.mdx', '../packages/**/*/*.stories.@(js|jsx|ts|tsx)'],
-  addons: ['@storybook/addon-a11y', '@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-docs', '@storybook/addon-actions'],
+
+  addons: [
+    getAbsolutePath("@storybook/addon-a11y"),
+    getAbsolutePath("@storybook/addon-links"),
+    getAbsolutePath("@storybook/addon-essentials"),
+    getAbsolutePath("@storybook/addon-docs"),
+    getAbsolutePath("@storybook/addon-actions"),
+    getAbsolutePath("@storybook/addon-mdx-gfm")
+  ],
+
   features: {
     previewMdx2: true
   },
-  core: {
-    builder: 'webpack5'
+
+  core: {},
+
+  framework: {
+    name: getAbsolutePath("@storybook/react-webpack5"),
+    options: {}
+  },
+
+  docs: {
+    autodocs: true
   }
 };
 
 export default config
+
+function getAbsolutePath(value: string): any {
+  return dirname(require.resolve(join(value, "package.json")));
+}

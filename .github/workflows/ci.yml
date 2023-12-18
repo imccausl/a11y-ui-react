@@ -12,12 +12,12 @@ env:
 jobs:
   commit-watch:
     runs-on: ubuntu-latest
-    if: "github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip ci]')"
+    if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip ci]')
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env
       - name: Commit Watch
@@ -33,7 +33,7 @@ jobs:
   build-and-test:
     name: Build & Test
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
     steps:
       - uses: actions/checkout@v3
 
