@@ -69,9 +69,9 @@ jobs:
         run: yarn docs:build
 
       - name: Upload Storybook Artifacts
-        uses: actions/upload-pages-artifacts@v2
+        uses: actions/upload-pages-artifact@v2
         with:
-          artifacts: ./.out
+          path: ./.out
 
       - name: Deploy Storybook
         id: deploy-storybook
