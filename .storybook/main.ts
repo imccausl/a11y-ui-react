@@ -1,4 +1,5 @@
 import { dirname, join } from "path";
+
 const config = {
   typescript: {
     check: false,
@@ -6,7 +7,7 @@ const config = {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
-      propFilter: prop => prop.parent ? !/node_modules/.test(prop.parent.fileName) : true
+      propFilter: (prop) => prop.parent ? !/node_modules/.test(prop.parent.fileName) : true
     }
   },
 
@@ -29,7 +30,11 @@ const config = {
 
   framework: {
     name: getAbsolutePath("@storybook/react-webpack5"),
-    options: {}
+    options: {
+      builder: {
+        useSWC: true
+      }
+    }
   },
 
   docs: {
