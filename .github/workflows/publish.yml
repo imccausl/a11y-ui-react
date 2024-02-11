@@ -16,7 +16,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Prepare Environment
         uses: ./.github/actions/prepare-env
       - name: Build packages
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [pre-release-check]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: ./.github/actions/prepare-env
@@ -51,7 +51,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy-storybook.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: [pre-release-check]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -60,7 +59,7 @@ jobs:
       - uses: ./.github/actions/prepare-env
 
       - name: Cache Storybook Assets
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ./.out
           key: storybook-assets-${{ hashFiles('**/package.json', '**/yarn.lock') }}-${{ hashFiles('**/.storybook/**/*')}}
