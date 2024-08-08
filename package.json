@@ -6,7 +6,7 @@
   "author": "Ian McCausland <imccausl@gmail.com>",
   "license": "MIT",
   "private": true,
-  "packageManager": "yarn@4.1.0",
+  "packageManager": "yarn@4.4.0",
   "workspaces": {
     "packages": [
       "packages/*"
@@ -59,7 +59,7 @@
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
-    "@yarnpkg/sdks": "^3.0.0-rc.26",
+    "@yarnpkg/sdks": "^3.2.0",
     "babel-loader": "^8.2.5",
     "babel-plugin-module-resolver": "^4.1.0",
     "core-js": "^3.25.1",
