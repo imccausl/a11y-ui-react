@@ -4,11 +4,11 @@ const config = {
   typescript: {
     check: false,
     checkOptions: {},
-    reactDocgen: 'react-docgen-typescript',
-    reactDocgenTypescriptOptions: {
-      shouldExtractLiteralValuesFromEnum: true,
-      propFilter: (prop) => prop.parent ? !/node_modules/.test(prop.parent.fileName) : true
-    }
+    reactDocgen: 'react-docgen',
+    // reactDocgenTypescriptOptions: {
+    //   shouldExtractLiteralValuesFromEnum: true,
+    //   propFilter: (prop) => prop.parent ? !/node_modules/.test(prop.parent.fileName) : true
+    // }
   },
 
   stories: ['../packages/**/*/*.stories.mdx', '../packages/**/*/*.stories.@(js|jsx|ts|tsx)'],
@@ -19,7 +19,9 @@ const config = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-docs"),
     getAbsolutePath("@storybook/addon-actions"),
-    getAbsolutePath("@storybook/addon-mdx-gfm")
+    getAbsolutePath("@storybook/addon-mdx-gfm"),
+    "@storybook/addon-webpack5-compiler-swc",
+    "@chromatic-com/storybook"
   ],
 
   features: {
@@ -31,15 +33,11 @@ const config = {
   framework: {
     name: getAbsolutePath("@storybook/react-webpack5"),
     options: {
-      builder: {
-        useSWC: true
-      }
+      builder: {}
     }
   },
 
-  docs: {
-    autodocs: true
-  }
+  docs: {}
 };
 
 export default config
