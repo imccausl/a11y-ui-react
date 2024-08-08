@@ -6,8 +6,8 @@
       "esnext"
     ],
     "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
