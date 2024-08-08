@@ -11,7 +11,7 @@ const config = {
     // }
   },
 
-  stories: ['../packages/**/*/*.stories.mdx', '../packages/**/*/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../packages/**/*/*.stories.@(js|jsx|ts|tsx)'],
 
   addons: [
     getAbsolutePath("@storybook/addon-a11y"),
@@ -19,7 +19,6 @@ const config = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-docs"),
     getAbsolutePath("@storybook/addon-actions"),
-    getAbsolutePath("@storybook/addon-mdx-gfm"),
     "@storybook/addon-webpack5-compiler-swc",
     "@chromatic-com/storybook"
   ],
