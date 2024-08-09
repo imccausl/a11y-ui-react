@@ -20,7 +20,7 @@
     "g:tsc": "cd $INIT_CWD && tsc",
     "start:dev": "storybook dev -p 6006",
     "docs:deploy": "yarn docs:build && storybook-to-ghpages --existing-output-dir=.out --ci",
-    "docs:build": "storybook build -o .out -s .storybook/static",
+    "docs:build": "storybook build -o .out",
     "g:test": "vitest",
     "g:coverage": "vitest --coverage",
     "commit-msg": "commitlint --edit",
