@@ -1,14 +1,11 @@
 import { dirname, join } from "path";
+import type {StorybookConfig} from "@storybook/react-webpack5"
 
-const config = {
+const config: StorybookConfig  = {
   typescript: {
     check: false,
     checkOptions: {},
     reactDocgen: 'react-docgen',
-    // reactDocgenTypescriptOptions: {
-    //   shouldExtractLiteralValuesFromEnum: true,
-    //   propFilter: (prop) => prop.parent ? !/node_modules/.test(prop.parent.fileName) : true
-    // }
   },
 
   stories: ['../packages/**/*/*.stories.@(js|jsx|ts|tsx)'],
@@ -23,10 +20,6 @@ const config = {
     "@chromatic-com/storybook"
   ],
 
-  features: {
-    previewMdx2: true
-  },
-
   core: {},
 
   framework: {
@@ -36,7 +29,8 @@ const config = {
     }
   },
 
-  docs: {}
+  docs: {},
+  staticDirs: ['static']
 };
 
 export default config
