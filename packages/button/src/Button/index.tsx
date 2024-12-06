@@ -3,8 +3,8 @@ import * as React from 'react'
 import { BaseButtonStyled } from './Button.styles'
 
 enum SubmitType {
-  BUTTON = 'button',
-  SUBMIT = 'submit',
+    BUTTON = 'button',
+    SUBMIT = 'submit',
 }
 
 // enum ButtonStyle {
@@ -18,34 +18,34 @@ enum SubmitType {
 // }
 
 export type ButtonProps = {
-  submitType?: SubmitType
-  // variant?: Variants
-  onClick: (event?: React.MouseEvent<HTMLButtonElement>) => void
-  disabled?: boolean
+    submitType?: SubmitType
+    // variant?: Variants
+    onClick: (event?: React.MouseEvent<HTMLButtonElement>) => void
+    disabled?: boolean
 }
 
 const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
-  children,
-  onClick,
-  disabled,
-  submitType,
+    children,
+    onClick,
+    disabled,
+    submitType,
 }) => {
-  const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (!disabled) {
-      console.log("trigger publish for testing")
-      onClick(e)
+    const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (!disabled) {
+            console.log('trigger publish for testing')
+            onClick(e)
+        }
     }
-  }
 
-  return (
-    <BaseButtonStyled
-      aria-disabled={disabled}
-      type={submitType}
-      onClick={handleOnClick}
-    >
-      {children}
-    </BaseButtonStyled>
-  )
+    return (
+        <BaseButtonStyled
+            aria-disabled={disabled}
+            type={submitType}
+            onClick={handleOnClick}
+        >
+            {children}
+        </BaseButtonStyled>
+    )
 }
 
 export default Button
