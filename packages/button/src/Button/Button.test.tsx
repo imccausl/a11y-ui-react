@@ -7,9 +7,9 @@ describe('Button', () => {
     it('should be clickable', () => {
         render(<Button onClick={() => {}} />)
         expect(screen.getByRole('button')).toMatchInlineSnapshot(`
-      <button
-        class="sc-bczRLJ cfEZfa"
-      />
-    `)
+          <button
+            class="sc-bczRLJ dlSsm"
+          />
+        `)
     })
 })
