@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "module": "NodeNext",
-    "noEmit": false,
+    "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -25,7 +25,8 @@
   },
   "include": [
     "packages",
-    "@types"
+    "@types",
+    "*.config.*",
   ],
   "exclude": [
     "**/node_modules",

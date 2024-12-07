@@ -6,11 +6,10 @@ module.exports = function (api) {
     [
       '@babel/preset-env',
       {
-        targets: "> 0.25%, not dead",
+        targets: '> 0.25%, not dead',
       },
     ],
     '@babel/preset-react',
-
   ]
 
   const plugins = [['module-resolver', { root: ['./packages'] }]]
