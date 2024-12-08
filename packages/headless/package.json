@@ -1,0 +1,18 @@
+{
+  "name": "@a11y-react/headless",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Headless components for a11y-react",
+  "exports": {
+    "./Slots": "./src/components/Slots.ts"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  }
+}
