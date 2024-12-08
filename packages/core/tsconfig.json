@@ -1,11 +1,14 @@
 {
-  "extends": "../../tsconfig.json",
-  "include": ["src", "index.ts"],
-  "exclude": ["stories"],
+  "extends": "@internal/typescript-config/workspace.json",
   "compilerOptions": {
-    "declaration": true,
     "rootDir": "src",
     "outDir": "lib",
-    "declarationDir": "lib"
-  }
+  },
+  "include": [
+    "src",
+    "index.ts"
+  ],
+  "excluse": [
+    "stories"
+  ]
 }

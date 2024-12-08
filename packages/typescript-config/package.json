@@ -1,0 +1,10 @@
+{
+  "name": "@internal/typescript-config",
+  "version": "0.0.0",
+  "description": "[Internal Package] Shared TypeScript configuration for a11y-react packages",
+  "main": "src/base.json",
+  "exports": {
+    "./base.json": "./src/tsconfig.base.json",
+    "./workspace.json": "./src/tsconfig.workspace.json"
+  }
+}
