@@ -24,7 +24,7 @@
     "build": "yarn g:tsc --module commonjs --outDir lib/cjs && yarn g:tsc --moduleResolution bundler --module esnext --outDir lib/esm",
     "test": "yarn g:test",
     "version": "yarn build",
-    "lint": "run -T eslint src --ext .ts,.tsx --config ../../.eslintrc.json",
+    "lint": "run -T eslint src --config ../../eslint.config.mjs",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {

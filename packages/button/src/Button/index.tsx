@@ -1,6 +1,6 @@
-import * as React from 'react'
-
 import { BaseButtonStyled } from './Button.styles'
+
+import type React from 'react'
 
 enum SubmitType {
     BUTTON = 'button',
