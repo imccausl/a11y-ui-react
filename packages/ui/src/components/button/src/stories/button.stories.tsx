@@ -1,4 +1,4 @@
-import { Button } from '../components/button/src/index.js'
+import { Button } from '../index.js'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
