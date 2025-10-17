@@ -1,4 +1,4 @@
-import { dirname, join } from "path";
+import { dirname, join } from "node:path";
 import type {StorybookConfig} from "@storybook/react-webpack5"
 
 const config: StorybookConfig  = {
@@ -13,9 +13,8 @@ const config: StorybookConfig  = {
   addons: [
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-docs"),
-    getAbsolutePath("@storybook/addon-actions"),
+    "storybook/actions",
     "@storybook/addon-webpack5-compiler-swc",
     "@chromatic-com/storybook"
   ],

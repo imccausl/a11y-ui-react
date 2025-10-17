@@ -1,0 +1,90 @@
+[18:48:09.480] [INFO] Storybook Upgrade - v9.1.13
+[18:48:09.489] [INFO] detect-projects-spinner-start: Detecting projects...
+[18:48:09.491] [DEBUG] Finding Storybook projects...
+[18:48:09.528] [DEBUG] Found 1 Storybook projects
+[18:48:09.528] [INFO] detect-projects-spinner: Detecting projects: 1 projects
+[18:48:09.529] [DEBUG] Getting Storybook data...
+[18:48:09.529] [DEBUG] Getting Storybook info...
+[18:48:09.529] [DEBUG] Loading main config...
+[18:48:09.655] [DEBUG] Error: Unable to find or evaluate /Users/imccausl/code/a11y-ui-react/.storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error: Package subpath './actions/package.json' is not defined by "exports" in /.yarn/__virtual__/storybook-virtual-4433982709/3/.yarn/berry/cache/storybook-npm-9.1.13-da8aa6c960-10.zip/node_modules/storybook/package.json imported from /.storybook/
+Require stack:
+- /.storybook/main.ts
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/storybook/dist/common/index.cjs
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/storybook/dist/cli/index.cjs
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/dist/bin/index.cjs
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/bin/index.cjs
+    at require$$0.Module._resolveFilename (/private/var/folders/32/6b6z7zzn4qxgf561dvkfzm980000gn/T/xfs-b44f1d2c/dlx-72513/.pnp.cjs:6765:13)
+    at Module._resolveFilename (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/helpers:151:19)
+    at getAbsolutePath (/.storybook/main.ts:38:26)
+    at Object.<anonymous> (/.storybook/main.ts:17:5)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Module._compile (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/esbuild-register/dist/node.js:2258:26)
+    at node:internal/modules/cjs/loader:1689:10
+    at require$$0.Module._extensions..js (/private/var/folders/32/6b6z7zzn4qxgf561dvkfzm980000gn/T/xfs-b44f1d2c/dlx-72513/.pnp.cjs:6809:35)
+    at Object.newLoader [as .ts] (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/esbuild-register/dist/node.js:2262:9)
+[18:48:09.655] [INFO] detect-projects-spinner-stop: 1 project detected
+[18:48:09.656] [DEBUG] Found 0 valid projects and 1 error projects
+[18:48:09.656] [ERROR] Failed to get projects
+[18:48:09.664] [ERROR] Error: ❌ Storybook found errors while collecting data for the following projects:
+/.storybook:
+Error: Unable to find or evaluate ./.storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error: Package subpath './actions/package.json' is not defined by "exports" in /.yarn/__virtual__/storybook-virtual-4433982709/3/.yarn/berry/cache/storybook-npm-9.1.13-da8aa6c960-10.zip/node_modules/storybook/package.json imported from /.storybook/
+Require stack:
+- /.storybook/main.ts
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/storybook/dist/common/index.cjs
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/storybook/dist/cli/index.cjs
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/dist/bin/index.cjs
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/bin/index.cjs
+    at require$0.Module._resolveFilename (/private/var/folders/32/6b6z7zzn4qxgf561dvkfzm980000gn/T/xfs-b44f1d2c/dlx-72513/.pnp.cjs:6765:13)
+    at Module._resolveFilename (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/helpers:151:19)
+    at getAbsolutePath (/.storybook/main.ts:38:26)
+    at Object.<anonymous> (/.storybook/main.ts:17:5)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Module._compile (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/esbuild-register/dist/node.js:2258:26)
+    at node:internal/modules/cjs/loader:1689:10
+    at require$0.Module._extensions..js (/private/var/folders/32/6b6z7zzn4qxgf561dvkfzm980000gn/T/xfs-b44f1d2c/dlx-72513/.pnp.cjs:6809:35)
+    at Object.newLoader [as .ts] (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/esbuild-register/dist/node.js:2262:9)
+    at getStorybookData (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/dist/bin/index.cjs:78:2455)
+    at async processProject (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/dist/bin/index.cjs:71:5434)
+Please fix the errors and run the upgrade command again.
+    at getProjects (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/dist/bin/index.cjs:76:10)
+    at async /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/dist/bin/index.cjs:285:1637
+    at async withTelemetry (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/storybook/dist/core-server/index.cjs:42282:12)
+    at async upgrade (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/dist/bin/index.cjs:285:1361)
+    at async Command.<anonymous> (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/dist/bin/index.cjs:291:3312)
+[18:48:09.676] [INFO] Attention: Storybook now collects completely anonymous telemetry regarding usage. This information is used to shape Storybook's roadmap and prioritize features.
+[18:48:09.683] [INFO] You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+[18:48:09.690] [INFO] https://storybook.js.org/telemetry
+[18:48:09.696] [INFO] 
+[18:48:10.878] [ERROR] Error: ❌ Storybook found errors while collecting data for the following projects:
+/.storybook:
+Error: Unable to find or evaluate ./.storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error: Package subpath './actions/package.json' is not defined by "exports" in /.yarn/__virtual__/storybook-virtual-4433982709/3/.yarn/berry/cache/storybook-npm-9.1.13-da8aa6c960-10.zip/node_modules/storybook/package.json imported from /.storybook/
+Require stack:
+- /.storybook/main.ts
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/storybook/dist/common/index.cjs
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/storybook/dist/cli/index.cjs
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/dist/bin/index.cjs
+- /Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/bin/index.cjs
+    at require$0.Module._resolveFilename (/private/var/folders/32/6b6z7zzn4qxgf561dvkfzm980000gn/T/xfs-b44f1d2c/dlx-72513/.pnp.cjs:6765:13)
+    at Module._resolveFilename (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/helpers:151:19)
+    at getAbsolutePath (/.storybook/main.ts:38:26)
+    at Object.<anonymous> (/.storybook/main.ts:17:5)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Module._compile (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/esbuild-register/dist/node.js:2258:26)
+    at node:internal/modules/cjs/loader:1689:10
+    at require$0.Module._extensions..js (/private/var/folders/32/6b6z7zzn4qxgf561dvkfzm980000gn/T/xfs-b44f1d2c/dlx-72513/.pnp.cjs:6809:35)
+    at Object.newLoader [as .ts] (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/esbuild-register/dist/node.js:2262:9)
+    at getStorybookData (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/dist/bin/index.cjs:78:2455)
+    at async processProject (/Users/imccausl/.npm/_npx/f5c355d7345d62da/node_modules/@storybook/cli/dist/bin/index.cjs:71:5434)
+Please fix the errors and run the upgrade command again.
